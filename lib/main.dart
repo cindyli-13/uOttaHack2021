@@ -5,7 +5,7 @@ import 'package:campus_cloud/screens/sign_up_general.dart';
 import 'package:campus_cloud/screens/sign_up_info.dart';
 
 // ******************* MAIN *******************
-void main() => runApp(AppStart());
+void main() => runApp(MyApp());
 
 // ******************* APP START *******************
 
