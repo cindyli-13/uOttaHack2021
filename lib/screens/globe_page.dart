@@ -19,7 +19,7 @@ class GlobePage extends StatelessWidget {
         Headline(),
         Globe(),
         AnywhereButton(),
-        AcceptButton(),
+        // AcceptButton(),
       ]),
     );
   }
