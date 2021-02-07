@@ -33,18 +33,18 @@ class ProfilePic extends StatelessWidget {
                             //image: AssetImage('asset/images/music.jpg')
                             //INSERT PROFILE PICTURE HERE
                             image: NetworkImage(
-                                'https://cdn.discordapp.com/attachments/762531948308070410/807996796550119454/Elika_Pic1.jpg')))),
+                                'https://cdn.discordapp.com/attachments/762531948308070410/807996958156259368/Elika_pic3.jpg')))),
               ),
             ),
             Text(
-              "elika_ava", //user's namename
+              "elika_123", //user's namename
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.black, fontSize: 24),
             ),
             Padding(
               padding: EdgeInsets.all(10),
               child: Text(
-                "eemad13@uottawa.ca", //user's name
+                "eemad13@uwaterloo.ca", //user's name
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Color(0xFF4C4B4B), fontSize: 18),
               ),
@@ -65,6 +65,7 @@ class UserInfo extends StatelessWidget {
               padding: EdgeInsets.only(left: 30, bottom: 20, top: 70),
               child: Align(
                 alignment: Alignment.centerLeft,
+                
                 child: Text(
                   "Elika Emadi", //user's name
                   textAlign: TextAlign.left,
@@ -77,7 +78,7 @@ class UserInfo extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "elika_ava", //user's name
+                  "elika_123", //user's name
                   textAlign: TextAlign.left,
                   style: TextStyle(color: Color(0xFF4C4B4B), fontSize: 18),
                 ),
@@ -94,17 +95,21 @@ class UserInfo extends StatelessWidget {
                 ),
               ),
             ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    PageRouteBuilder( //CHANGE TO GET STARTED PAGE
-                        pageBuilder: (_, __, ____) => HomePage()));
-              },
-              child: Text(
-                'Next',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.button,
+            Container(
+              width: 150.0,
+              height: 50.0,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      PageRouteBuilder( //CHANGE TO GET STARTED PAGE
+                          pageBuilder: (_, __, ____) => HomePage()));
+                },
+                child: Text(
+                  'Done',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.button,
+                ),
               ),
             ),
           ]),

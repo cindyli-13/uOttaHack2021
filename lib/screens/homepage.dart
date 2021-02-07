@@ -57,9 +57,9 @@ class Header extends StatelessWidget {
                               border: Border.all(color: Colors.black),
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                  fit: BoxFit.fill,
+                                  fit: BoxFit.cover,
                                   image: AssetImage(
-                                      './assets/images/profile_pic.png')
+                                      './assets/images/friend4.jpg')
                                   //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)

@@ -11,9 +11,9 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
   int _currentIndex = 0;
 
   List<String> people = [
-    "assets/images/friend1.png",
-    "assets/images/friend2.png",
     "assets/images/friend3.jpg",
+    "assets/images/friend2.png",
+    "assets/images/friend1.png",
   ];
 
   @override
@@ -69,7 +69,7 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(15)),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.asset('assets/images/friend4.jpg',
+                          child: Image.asset('assets/images/elika.jpg',
                             fit: BoxFit.cover,
                           ),
                         ),
