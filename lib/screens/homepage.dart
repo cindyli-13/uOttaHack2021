@@ -1,0 +1,235 @@
+import 'package:flutter/material.dart';
+import 'package:campus_cloud/screens/chill_page.dart';
+import 'package:campus_cloud/screens/games_page.dart';
+import 'package:campus_cloud/screens/music_page.dart';
+import 'package:campus_cloud/screens/study_page.dart';
+import 'package:campus_cloud/screens/workout_page.dart';
+import 'package:campus_cloud/screens/setting_page.dart';
+import 'package:campus_cloud/screens/friend_page.dart';
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: Stack(children: <Widget>[
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(children: <Widget>[Header(), Grid()]),
+          ),
+        )
+      ]),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+            //backgroundColor: Colors.black
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: "Message",
+            //backgroundColor: Colors.blue
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: "Map",
+            //backgroundColor: Colors.blue
+          ),
+
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.settings),
+          //   label: "Settings",
+          //   //backgroundColor: Colors.blue
+          // ),
+
+        ]
+      ),
+    );
+  }
+}
+
+class Header extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //need to change to FutureBuilder when auth works
+    double screenWidth = MediaQuery.of(context).size.width;
+    
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget> [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget> [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30.0),
+                  child: Container(
+                    width: 80.0,
+                    height: 80.0,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('asset/images/chill.png')
+                        // image: NetworkImage(
+                        //   snapshot.data.photoUrl)
+                    ))),
+                ),
+              ]
+            ),
+            )
+        ]
+      ),
+    );
+
+    // return Container(
+    //   height: 64,
+    //   child: Row(
+    //     children: [
+    //       ButtonTheme(
+    //         minWidth: 50.0,
+    //         height: 100.0,
+    //         child: OutlineButton(
+    //             shape: new CircleBorder(),
+    //             borderSide: BorderSide(color: Colors.black, width: 2.0),
+    //             color: Colors.grey,
+    //             //highlightedBorderColor: Colors.grey,
+    //             //padding: ,
+    //             onPressed: () {
+    //               Navigator.push(
+    //                   context,
+    //                   new MaterialPageRoute(
+    //                       builder: (context) => SettingPage()));
+    //             }),
+    //       ),
+    //     ],
+    //   ),
+    // );
+  }
+}
+
+class Grid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GridView.count(
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          primary: false,
+          children: <Widget>[
+            //Friend Page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => FriendPage()));
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                elevation: 4,
+                child: Image.asset(
+                  'assets/images/friends.png',
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+            //Study Page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => StudyPage()));
+              },
+              child: Card(
+                // shape: RoundedRectangleBorder(
+                //     borderRadius: BorderRadius.circular(8)),
+                elevation: 4,
+                child: Image.asset(
+                  'assets/images/study.png',
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+            //Games Page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => GamePage()));
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 4,
+                child: Image.asset(
+                  'assets/images/games.png',
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+            //Chill Page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ChillPage()));
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 4,
+                child: Image.asset(
+                  'assets/images/chill.png',
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+            //Workout Page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => WorkoutPage()));
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 4,
+                child: Image.asset(
+                  'assets/images/workout.png',
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+            //Music Page
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => MusicPage()));
+              },
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                elevation: 4,
+                child: Image.asset(
+                  'assets/images/music.png',
+                  fit: BoxFit.cover
+                )
+              ),
+            ),
+          ],
+          crossAxisCount: 2),
+    );
+  }
+}
+
