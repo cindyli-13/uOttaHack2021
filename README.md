@@ -4,8 +4,6 @@ Submission to uOttaHack 4
 
 ![Alt Text](https://github.com/cindyli-13/uOttaHack2021/blob/main/poster.gif)
 
-![Alt Text](https://github.com/cindyli-13/uOttaHack2021/blob/main/login.gif)
-
 ## Inspiration
 The inspiration of this application stemmed from a discord video call, where the phrase “turn on your cameras, this is the only way we can see each other” changed from just a sentence into an idea.  
 
