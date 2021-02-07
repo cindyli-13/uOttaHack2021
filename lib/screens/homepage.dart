@@ -203,7 +203,7 @@ class BottomBar extends StatelessWidget {
     return Align(
         alignment: Alignment.bottomCenter,
         child: Container(
-          color: Colors.white70,
+          color: Colors.white70.withOpacity(0.6),
           child: ButtonBar(
             alignment: MainAxisAlignment.spaceEvenly,
             children: [

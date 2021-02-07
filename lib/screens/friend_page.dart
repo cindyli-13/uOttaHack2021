@@ -11,9 +11,9 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
   int _currentIndex = 0;
 
   List<String> people = [
-    "assets/images/games.jpg",
-    "assets/images/music.jpg",
-    "assets/images/chill.jpg",
+    "assets/images/friend1.png",
+    "assets/images/friend2.png",
+    "assets/images/friend3.jpg",
   ];
 
   @override
@@ -43,23 +43,7 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
                           //CHANGE ANIMATION
                         })),
               ),
-
               //other person
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Center(
-                    child: Container(
-                        width: MediaQuery.of(context).size.width * 0.65,
-                        height: MediaQuery.of(context).size.width * 0.65,
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset('${people[_currentIndex]}'),
-                          ),
-                        ))),
-              ),
               Center(
                   child: Container(
                       width: MediaQuery.of(context).size.width * 0.65,
@@ -69,34 +53,56 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(15)),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.asset('assets/images/friends.jpg'),
+                          child: Image.asset(
+                            '${people[_currentIndex]}',
+                            fit: BoxFit.cover,
+                            ),
                         ),
                       ))),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                      child: RaisedButton(
-                    child: Text("Share"),
-                    onPressed: () {},
-                  )),
-                  Container(
-                      child: RaisedButton(
-                    child: Text("Next"),
-                    onPressed: () {
-                      setState(() {
-                        if (_currentIndex != people.length - 1) {
-                          _currentIndex += 1;
-                        }
-                      });
-                    },
-                  )),
-                ],
+              //you
+              Center(
+                  child: Container(
+                      width: MediaQuery.of(context).size.width * 0.65,
+                      height: MediaQuery.of(context).size.width * 0.65,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset('assets/images/friend4.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ))),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 60.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        child: RaisedButton(
+                      child: Text("Share"),
+                      onPressed: () {},
+                    )),
+                    Container(
+                        child: RaisedButton(
+                      child: Text("Next"),
+                      onPressed: () {
+                        setState(() {
+                          if (_currentIndex != people.length - 1) {
+                            _currentIndex += 1;
+                          }
+                        });
+                      },
+                    )),
+                  ],
+                ),
               ),
               //bottom bar
-              BottomBar()
+              // BottomBar()
             ],
-          )
+          ),
+          BottomBar()
         ],
       ),
     );
@@ -108,32 +114,35 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
         alignment: Alignment.bottomCenter,
-        child: ButtonBar(
-          alignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            //mic
-            IconButton(
-                icon: Icon(Icons.mic),
-                //onPressed: null,
-                onPressed: () {
-                  //mute
-                }),
-            //video
-            IconButton(
-                icon: Icon(Icons.photo_camera),
-                onPressed: () {
-                  //turn off video
-                }),
-            //message
-            IconButton(
-                icon: Icon(Icons.message),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      new MaterialPageRoute(
-                          builder: (context) => SettingPage()));
-                }),
-          ],
+        child: Container(
+          color: Colors.white70.withOpacity(0.6),
+          child: ButtonBar(
+            alignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              //mic
+              IconButton(
+                  icon: Icon(Icons.mic),
+                  //onPressed: null,
+                  onPressed: () {
+                    //mute
+                  }),
+              //video
+              IconButton(
+                  icon: Icon(Icons.photo_camera),
+                  onPressed: () {
+                    //turn off video
+                  }),
+              //message
+              IconButton(
+                  icon: Icon(Icons.message),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => SettingPage()));
+                  }),
+            ],
+          ),
         ));
   }
 }

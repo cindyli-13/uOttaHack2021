@@ -1,3 +1,4 @@
+import 'package:campus_cloud/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:campus_cloud/screens/friend_page.dart';
 import 'package:campus_cloud/screens/games_page.dart';
@@ -24,7 +25,7 @@ class AppStart extends StatelessWidget {
       theme: baseTheme,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => AppPage(),
+        '/': (context) => HomePage(),
         '/sign-in': (context) => Signin(),
         '/sign-up-general': (context) => SignUpGeneral(),
         '/sign-up-info': (context) => SignUpInfo(),
