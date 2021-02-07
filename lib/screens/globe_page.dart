@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:echoar_package/echoar_package.dart';
+import 'package:flutter_3d_obj/flutter_3d_obj.dart';
 
 // ******************* CONSTANTS *******************
 
@@ -53,7 +55,29 @@ class Headline extends StatelessWidget {
 
 // ******************* GLOBE *******************
 
-class Globe extends StatelessWidget {
+class Globe extends StatefulWidget {
+  @override
+  _GlobeState createState() => _GlobeState();
+}
+
+class _GlobeState extends State<Globe> {
+  String _globeHologramPath = "";
+  EchoAR echoAR;
+  Future<int> _f;
+
+  @override
+  void initState() {
+    super.initState();
+    _f = loadEchoAR();
+  }
+
+  Future<int> loadEchoAR() async {
+    if (echoAR == null) echoAR = EchoAR(apiKey: "falling-resonance-5216");
+    _globeHologramPath = await echoAR
+        .getModelFromEntryId("8a822caa-00c5-4e3f-a6bd-ec3ba32e4458");
+    return 1;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +92,21 @@ class Globe extends StatelessWidget {
           Radius.circular(20),
         ),
       ),
-      child: Image.asset('assets/images/globe.png'),
+      child: FutureBuilder<int>(
+        future: _f,
+        builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+          if (snapshot.hasData) {
+            return Object3D(
+              size: const Size(30.0, 30.0),
+              path: _globeHologramPath,
+              asset: true,
+              zoom: 5.0,
+            );
+          } else {
+            return Image.asset('assets/images/globe.png');
+          }
+        },
+      ),
     );
   }
 }

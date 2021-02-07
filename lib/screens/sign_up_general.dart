@@ -175,7 +175,7 @@ class _LanguageSelectState extends State<LanguageSelect> {
           });
         },
         hint: Text(
-          'Lanugage',
+          'Language',
           style: TextStyle(color: Colors.grey),
         ),
         items: <String>[

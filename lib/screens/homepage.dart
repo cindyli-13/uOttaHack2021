@@ -39,6 +39,7 @@ class Header extends StatelessWidget {
     //need to change to FutureBuilder when auth works F
 
     return Container(
+<<<<<<< HEAD
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -66,6 +67,33 @@ class Header extends StatelessWidget {
                   ]),
             )
           ]),
+=======
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
+          Widget>[
+        Expanded(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30.0),
+                  child: Container(
+                      width: 80.0,
+                      height: 80.0,
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black),
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('assets/images/profile_pic.png')
+                              // image: NetworkImage(
+                              //   snapshot.data.photoUrl)
+                              ))),
+                ),
+              ]),
+        )
+      ]),
+>>>>>>> Try echoar stuff
     );
   }
 }
