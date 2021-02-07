@@ -53,7 +53,7 @@ class Header extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage('asset/images/chill.png')
+                                  image: AssetImage('asset/images/chill.jpg')
                                   //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)
