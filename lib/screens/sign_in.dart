@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:campus_cloud/common/backdrop.dart';
+
+final buttonWidth = 230.0;
+final buttonHeight = 50.0;
 
 class Signin extends StatefulWidget {
   @override
@@ -10,26 +14,16 @@ class SigninState extends State<Signin> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xFFBFE6EF),
+      backgroundColor: Theme.of(context).primaryColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(
-            height: 220,
-          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                Backdrop(),
                 SizedBox(
                   height: 40,
                 ),
@@ -91,17 +85,21 @@ class SigninState extends State<Signin> {
                 SizedBox(
                   height: 20.0,
                 ),
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 60),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color.fromRGBO(49, 39, 79, 1),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(color: Colors.white),
+                Center(
+                  child: Container(
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    padding: EdgeInsets.only(
+                      top: 3,
+                      bottom: 3,
+                    ),
+                    child: RaisedButton(
+                      onPressed: buttonPressedHandler,
+                      child: Text(
+                        'Login',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.button,
+                      ),
                     ),
                   ),
                 ),
@@ -122,5 +120,9 @@ class SigninState extends State<Signin> {
         ],
       ),
     );
+  }
+
+  void buttonPressedHandler() {
+    Navigator.pushNamed(context, '/home');
   }
 }

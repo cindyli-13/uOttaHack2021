@@ -49,7 +49,12 @@ class FrontPageImage extends StatelessWidget {
         top: 30,
         bottom: 50,
       ),
-      child: Image.asset('./assets/image-missing.png'),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(20),
+        ),
+      ),
+      child: Image.asset('assets/images/Homepage_design_no_background.png'),
     );
   }
 }
@@ -83,7 +88,7 @@ class _LoginButtonState extends State<LoginButton> {
   }
 
   void buttonPressedHandler() {
-    return;
+    Navigator.pushNamed(context, '/sign-in');
   }
 }
 

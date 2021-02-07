@@ -31,7 +31,7 @@ class Logo extends StatelessWidget {
         top: 26,
         left: 22.43,
       ),
-      child: Image.asset('./assets/logo.jpg'),
+      child: Image.asset('assets/images/logo.jpg'),
     );
   }
 }
@@ -66,7 +66,7 @@ class Line extends StatelessWidget {
       width: 425.97,
       height: 161.23,
       margin: EdgeInsets.only(top: 111.42),
-      child: Image.asset('./assets/image-missing.png'),
+      child: Image.asset('assets/images/image-missing.png'),
     );
   }
 }
