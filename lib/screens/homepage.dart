@@ -15,42 +15,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: Stack(children: <Widget>[
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Column(children: <Widget>[Header(), Grid()]),
+            child: Column(children: <Widget>[Header(), Grid(), BottomBar()]),
           ),
         )
-      ]),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "Home",
-          //backgroundColor: Colors.black
-        ),
-
-        BottomNavigationBarItem(
-          icon: Icon(Icons.message),
-          label: "Message",
-          //backgroundColor: Colors.blue
-        ),
-
-        BottomNavigationBarItem(
-          icon: Icon(Icons.map),
-          label: "Map",
-          //backgroundColor: Colors.blue
-        ),
-
-        // BottomNavigationBarItem(
-        //   icon: Icon(Icons.settings),
-        //   label: "Settings",
-        //   //backgroundColor: Colors.blue
-        // ),
       ]),
     );
   }
@@ -59,8 +32,7 @@ class _HomePageState extends State<HomePage> {
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //need to change to FutureBuilder when auth works
-    double screenWidth = MediaQuery.of(context).size.width;
+    //need to change to FutureBuilder when auth works F
 
     return Container(
       child: Row(
@@ -81,7 +53,8 @@ class Header extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage('assets/images/chill.png')
+                                  image: AssetImage('asset/images/chill.png')
+                                  //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)
                                   ))),
@@ -90,30 +63,6 @@ class Header extends StatelessWidget {
             )
           ]),
     );
-
-    // return Container(
-    //   height: 64,
-    //   child: Row(
-    //     children: [
-    //       ButtonTheme(
-    //         minWidth: 50.0,
-    //         height: 100.0,
-    //         child: OutlineButton(
-    //             shape: new CircleBorder(),
-    //             borderSide: BorderSide(color: Colors.black, width: 2.0),
-    //             color: Colors.grey,
-    //             //highlightedBorderColor: Colors.grey,
-    //             //padding: ,
-    //             onPressed: () {
-    //               Navigator.push(
-    //                   context,
-    //                   new MaterialPageRoute(
-    //                       builder: (context) => SettingPage()));
-    //             }),
-    //       ),
-    //     ],
-    //   ),
-    // );
   }
 }
 
@@ -134,9 +83,9 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
+                      borderRadius: BorderRadius.circular(20.0)),
                   elevation: 4,
-                  child: Image.asset('assets/images/friends.png',
+                  child: Image.asset('assets/images/friends.jpg',
                       fit: BoxFit.cover)),
             ),
             //Study Page
@@ -146,10 +95,10 @@ class Grid extends StatelessWidget {
                     new MaterialPageRoute(builder: (context) => StudyPage()));
               },
               child: Card(
-                  // shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(8)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
-                  child: Image.asset('assets/images/study.png',
+                  child: Image.asset('assets/images/study.jpg',
                       fit: BoxFit.cover)),
             ),
             //Games Page
@@ -162,7 +111,7 @@ class Grid extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
-                  child: Image.asset('assets/images/games.png',
+                  child: Image.asset('assets/images/games.jpg',
                       fit: BoxFit.cover)),
             ),
             //Chill Page
@@ -175,7 +124,7 @@ class Grid extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
-                  child: Image.asset('assets/images/chill.png',
+                  child: Image.asset('assets/images/chill.jpg',
                       fit: BoxFit.cover)),
             ),
             //Workout Page
@@ -188,7 +137,7 @@ class Grid extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
-                  child: Image.asset('assets/images/workout.png',
+                  child: Image.asset('assets/images/workout.jpg',
                       fit: BoxFit.cover)),
             ),
             //Music Page
@@ -201,11 +150,57 @@ class Grid extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
-                  child: Image.asset('assets/images/music.png',
+                  child: Image.asset('assets/images/music.jpg',
                       fit: BoxFit.cover)),
             ),
           ],
           crossAxisCount: 2),
     );
+  }
+}
+
+class BottomBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+        alignment: Alignment.bottomCenter,
+        child: ButtonBar(
+          alignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            //home
+            IconButton(
+                icon: Icon(Icons.home),
+
+                //onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      //new MaterialPageRoute(builder: (context) => HomePage())
+                      PageRouteBuilder(
+                          pageBuilder: (context, Animation animation,
+                                  Animation animation2) =>
+                              HomePage(),
+                          transitionDuration: Duration(seconds: 0)));
+                }),
+            //messages
+            IconButton(
+                icon: Icon(Icons.message),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => SettingPage()));
+                }),
+            //map
+            IconButton(
+                icon: Icon(Icons.map),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => SettingPage()));
+                }),
+          ],
+        ));
   }
 }
