@@ -82,11 +82,15 @@ class Grid extends StatelessWidget {
             //Friend Page
             GestureDetector(
               onTap: () {
+<<<<<<< HEAD
                 Navigator.push(
                     context,
                     //new MaterialPageRoute(builder: (context) => FriendPage())
                     PageRouteBuilder(
                         pageBuilder: (_, __, ____) => FriendPage()));
+=======
+                Navigator.pushNamed(context, '/globe-page');
+>>>>>>> Add UI pages
               },
               child: Card(
                   shape: RoundedRectangleBorder(

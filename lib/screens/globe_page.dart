@@ -2,21 +2,22 @@ import 'package:flutter/material.dart';
 
 // ******************* CONSTANTS *******************
 
-final buttonWidth = 230.0;
+final buttonWidth = 180.0;
 final buttonHeight = 50.0;
 
-// ******************* APP PAGE *******************
+// ******************* GLOBE PAGE *******************
 
-class AppPage extends StatelessWidget {
+class GlobePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Theme.of(context).primaryColor,
       child: Column(children: [
         Title(),
-        FrontPageImage(),
-        LoginButton(),
-        SignUpButton(),
+        Headline(),
+        Globe(),
+        AnywhereButton(),
+        AcceptButton(),
       ]),
     );
   }
@@ -28,18 +29,31 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 100),
-      child: Text('Welcome to CampusCloud',
+      padding: EdgeInsets.only(top: 70),
+      child: Text('Welcome to the Globe!',
           textAlign: TextAlign.center,
-          overflow: TextOverflow.clip,
-          style: Theme.of(context).textTheme.headline1),
+          style: Theme.of(context).textTheme.headline3),
     );
   }
 }
 
-// ******************* IMAGE *******************
+// ******************* HEADLINE *******************
 
-class FrontPageImage extends StatelessWidget {
+class Headline extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: 50),
+      child: Text('Where are you travelling today?',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyText1),
+    );
+  }
+}
+
+// ******************* GLOBE *******************
+
+class Globe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -54,52 +68,19 @@ class FrontPageImage extends StatelessWidget {
           Radius.circular(20),
         ),
       ),
-      child: Image.asset('assets/images/Homepage_design_no_background.png'),
+      child: Image.asset('assets/images/globe.png'),
     );
   }
 }
 
-// ******************* LOGIN BUTTON *******************
+// ******************* ANYWHERE BUTTON *******************
 
-class LoginButton extends StatefulWidget {
+class AnywhereButton extends StatefulWidget {
   @override
-  _LoginButtonState createState() => _LoginButtonState();
+  _AnywhereButtonState createState() => _AnywhereButtonState();
 }
 
-class _LoginButtonState extends State<LoginButton> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: buttonWidth,
-      height: buttonHeight,
-      padding: EdgeInsets.only(
-        top: 3,
-        bottom: 3,
-      ),
-      child: RaisedButton(
-        onPressed: buttonPressedHandler,
-        child: Text(
-          'Login',
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.button,
-        ),
-      ),
-    );
-  }
-
-  void buttonPressedHandler() {
-    Navigator.pushNamed(context, '/sign-in');
-  }
-}
-
-// ******************* SIGN UP BUTTON *******************
-
-class SignUpButton extends StatefulWidget {
-  @override
-  _SignUpButtonState createState() => _SignUpButtonState();
-}
-
-class _SignUpButtonState extends State<SignUpButton> {
+class _AnywhereButtonState extends State<AnywhereButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -115,7 +96,7 @@ class _SignUpButtonState extends State<SignUpButton> {
       child: RaisedButton(
         onPressed: buttonPressedHandler,
         child: Text(
-          'Sign Up',
+          'Anywhere',
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.button,
         ),
@@ -124,6 +105,42 @@ class _SignUpButtonState extends State<SignUpButton> {
   }
 
   void buttonPressedHandler() {
-    Navigator.pushNamed(context, '/sign-up-general');
+    Navigator.pushNamed(context, '/extra-filters');
+  }
+}
+
+// ******************* ACCEPT BUTTON *******************
+
+class AcceptButton extends StatefulWidget {
+  @override
+  _AcceptButtonState createState() => _AcceptButtonState();
+}
+
+class _AcceptButtonState extends State<AcceptButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: buttonWidth,
+      height: buttonHeight,
+      margin: EdgeInsets.only(
+        top: 20,
+      ),
+      padding: EdgeInsets.only(
+        top: 3,
+        bottom: 3,
+      ),
+      child: RaisedButton(
+        onPressed: buttonPressedHandler,
+        child: Text(
+          'Accept',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.button,
+        ),
+      ),
+    );
+  }
+
+  void buttonPressedHandler() {
+    Navigator.pushNamed(context, '/extra-filters');
   }
 }

@@ -10,6 +10,8 @@ import 'package:campus_cloud/screens/app_page.dart';
 import 'package:campus_cloud/screens/sign_in.dart';
 import 'package:campus_cloud/screens/sign_up_general.dart';
 import 'package:campus_cloud/screens/sign_up_info.dart';
+import 'package:campus_cloud/screens/globe_page.dart';
+import 'package:campus_cloud/screens/extra_filters.dart';
 
 // ******************* MAIN *******************
 void main() => runApp(AppStart());
@@ -35,6 +37,8 @@ class AppStart extends StatelessWidget {
         '/music': (context) => MusicPage(),
         '/workout': (context) => WorkoutPage(),
         '/study': (context) => StudyPage(),
+        '/globe-page': (context) => GlobePage(),
+        '/extra-filters': (context) => ExtraFiltersPage(),
       },
     );
   }

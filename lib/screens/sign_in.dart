@@ -18,12 +18,12 @@ class SigninState extends State<Signin> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          Backdrop(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Backdrop(),
                 SizedBox(
                   height: 40,
                 ),
