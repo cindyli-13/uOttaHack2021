@@ -10,12 +10,12 @@ The inspiration of this application stemmed from a discord video call, where the
 We wanted to create an app specifically created by and for university students, to create a virtually social environment that could aid in reigniting connection, excitement, and the feeling of taking new chances.
 
 ## What it does
-- Helps university/college students interact and meet other students around the world, or in their own community
-	- Includes features such as searching for a friend in a specific program or year
-	- Features other channels created for different purposes such as studying together, chilling, playing games, networking, working out, and more
-- Connects students in a 1-on-1 format or in a group environment
+- Connects university/college students in a 1-on-1 format or in a group environment
 	- Integrates a video calling feature, allowing for the exchange of contact information and the ability to quickly make friends
 	- Also allows for text messaging and video calling using an avatar in consideration for users’ privacy concerns 
+- Helps students interact and meet other students around the world, or in their own community
+	- Includes features such as searching for a friend in a specific program or year
+	- Features other channels created for different purposes such as studying together, chilling, playing games, networking, working out, and more
 - Helps maintain social activity and prevents COVID from affecting people's mental health
 
 ## How we built it
