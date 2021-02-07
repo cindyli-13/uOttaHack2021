@@ -27,7 +27,7 @@ class AppStart extends StatelessWidget {
       theme: baseTheme,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => HomePage(),
+        '/': (context) => AppPage(),
         '/sign-in': (context) => Signin(),
         '/sign-up-general': (context) => SignUpGeneral(),
         '/sign-up-info': (context) => SignUpInfo(),
