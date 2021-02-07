@@ -31,7 +31,7 @@ class AppStart extends StatelessWidget {
         '/sign-up-general': (context) => SignUpGeneral(),
         '/sign-up-info': (context) => SignUpInfo(),
         '/home': (context) => HomePage(),
-        '/friend': (context) => FriendPage(),
+        '/friend-page': (context) => FriendPage(),
         '/chill': (context) => FriendPage(),
         '/games': (context) => GamePage(),
         '/music': (context) => MusicPage(),

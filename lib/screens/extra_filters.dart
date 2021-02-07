@@ -305,6 +305,6 @@ class _LetsGoButtonState extends State<LetsGoButton> {
   }
 
   void buttonPressedHandler() {
-    return;
+    Navigator.pushNamed(context, '/friend-page');
   }
 }

@@ -6,6 +6,7 @@ import 'package:campus_cloud/screens/study_page.dart';
 import 'package:campus_cloud/screens/workout_page.dart';
 import 'package:campus_cloud/screens/setting_page.dart';
 import 'package:campus_cloud/screens/friend_page.dart';
+import 'package:campus_cloud/screens/globe_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,7 +40,6 @@ class Header extends StatelessWidget {
     //need to change to FutureBuilder when auth works F
 
     return Container(
-<<<<<<< HEAD
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -58,7 +58,8 @@ class Header extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage('asset/images/logo.jpg')
+                                  image: AssetImage(
+                                      './assets/images/profile_pic.png')
                                   //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)
@@ -67,33 +68,6 @@ class Header extends StatelessWidget {
                   ]),
             )
           ]),
-=======
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
-          Widget>[
-        Expanded(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 30.0),
-                  child: Container(
-                      width: 80.0,
-                      height: 80.0,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black),
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage('assets/images/profile_pic.png')
-                              // image: NetworkImage(
-                              //   snapshot.data.photoUrl)
-                              ))),
-                ),
-              ]),
-        )
-      ]),
->>>>>>> Try echoar stuff
     );
   }
 }
@@ -110,15 +84,11 @@ class Grid extends StatelessWidget {
             //Friend Page
             GestureDetector(
               onTap: () {
-<<<<<<< HEAD
                 Navigator.push(
                     context,
                     //new MaterialPageRoute(builder: (context) => FriendPage())
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ____) => FriendPage()));
-=======
-                Navigator.pushNamed(context, '/globe-page');
->>>>>>> Add UI pages
+                        pageBuilder: (_, __, ____) => GlobePage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
