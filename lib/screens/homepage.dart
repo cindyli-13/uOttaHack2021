@@ -133,7 +133,7 @@ class Grid extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0)),
                 elevation: 4,
                 child: Image.asset(
-                  'assets/images/friends.png',
+                  'assets/images/friends.jpg',
                   fit: BoxFit.cover
                 )
               ),
@@ -149,7 +149,7 @@ class Grid extends StatelessWidget {
                 //     borderRadius: BorderRadius.circular(8)),
                 elevation: 4,
                 child: Image.asset(
-                  'assets/images/study.png',
+                  'assets/images/study.jpg',
                   fit: BoxFit.cover
                 )
               ),
@@ -165,7 +165,7 @@ class Grid extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8)),
                 elevation: 4,
                 child: Image.asset(
-                  'assets/images/games.png',
+                  'assets/images/games.jpg',
                   fit: BoxFit.cover
                 )
               ),
@@ -181,7 +181,7 @@ class Grid extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8)),
                 elevation: 4,
                 child: Image.asset(
-                  'assets/images/chill.png',
+                  'assets/images/chill.jpg',
                   fit: BoxFit.cover
                 )
               ),
@@ -197,7 +197,7 @@ class Grid extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8)),
                 elevation: 4,
                 child: Image.asset(
-                  'assets/images/workout.png',
+                  'assets/images/workout.jpg',
                   fit: BoxFit.cover
                 )
               ),
@@ -213,7 +213,7 @@ class Grid extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8)),
                 elevation: 4,
                 child: Image.asset(
-                  'assets/images/music.png',
+                  'assets/images/music.jpg',
                   fit: BoxFit.cover
                 )
               ),
