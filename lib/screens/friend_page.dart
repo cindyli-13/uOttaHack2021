@@ -8,6 +8,8 @@ class FriendPage extends StatefulWidget {
 }
 
 class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
+  int _currentIndex = 0;
+
   List<String> people = [
     "assets/images/games.jpg",
     "assets/images/music.jpg",
@@ -43,42 +45,6 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
               ),
 
               //other person
-              new Center(
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  child: new TinderSwapCard(
-                    swipeUp: true,
-                    swipeDown: true,
-                    orientation: AmassOrientation.BOTTOM,
-                    totalNum: people.length,
-                    stackNum: 3,
-                    swipeEdge: 2.0,
-                    maxWidth: MediaQuery.of(context).size.width * 0.7,
-                    maxHeight: MediaQuery.of(context).size.width * 0.7,
-                    minWidth: MediaQuery.of(context).size.width * 0.6,
-                    minHeight: MediaQuery.of(context).size.width * 0.6,
-                    cardBuilder: (context, index) => Card(
-                      child: Image.asset('${people[index]}'),
-                    ),
-                    cardController: controller = CardController(),
-                    swipeUpdateCallback:
-                        (DragUpdateDetails details, Alignment align) {
-                      /// Get swiping card's alignment
-                      if (align.x < 0) {
-                        //Card is LEFT swiping
-                      } else if (align.x > 0) {
-                        //Card is RIGHT swiping
-                      }
-                    },
-                    swipeCompleteCallback:
-                        (CardSwipeOrientation orientation, int index) {
-                      /// Get orientation & index of swiped card!
-                    },
-                  ),
-                ),
-              ),
-
-              //you
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Center(
@@ -90,14 +56,45 @@ class _FriendPageState extends State<FriendPage> with TickerProviderStateMixin {
                               borderRadius: BorderRadius.circular(15)),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset('assets/images/friends.jpg'),
+                            child: Image.asset('${people[_currentIndex]}'),
                           ),
                         ))),
               ),
-
+              Center(
+                  child: Container(
+                      width: MediaQuery.of(context).size.width * 0.65,
+                      height: MediaQuery.of(context).size.width * 0.65,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15)),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset('assets/images/friends.jpg'),
+                        ),
+                      ))),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                      child: RaisedButton(
+                    child: Text("Share"),
+                    onPressed: () {},
+                  )),
+                  Container(
+                      child: RaisedButton(
+                    child: Text("Next"),
+                    onPressed: () {
+                      setState(() {
+                        if (_currentIndex != people.length - 1) {
+                          _currentIndex += 1;
+                        }
+                      });
+                    },
+                  )),
+                ],
+              ),
               //bottom bar
               BottomBar()
-                
             ],
           )
         ],
@@ -116,14 +113,14 @@ class BottomBar extends StatelessWidget {
           children: [
             //mic
             IconButton(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.mic),
                 //onPressed: null,
                 onPressed: () {
                   //mute
                 }),
             //video
             IconButton(
-                icon: Icon(Icons.message),
+                icon: Icon(Icons.photo_camera),
                 onPressed: () {
                   //turn off video
                 }),

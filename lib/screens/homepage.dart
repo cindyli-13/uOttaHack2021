@@ -20,10 +20,14 @@ class _HomePageState extends State<HomePage> {
       body: Stack(children: <Widget>[
         SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(children: <Widget>[Header(), Grid(), BottomBar()]),
+            padding: const EdgeInsets.all(15.0),
+            child: Column(children: <Widget>[
+              Header(),
+              Grid(),
+            ]),
           ),
-        )
+        ),
+        BottomBar()
       ]),
     );
   }
@@ -53,7 +57,7 @@ class Header extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage('asset/images/jayce.jpg')
+                                  image: AssetImage('asset/images/logo.jpg')
                                   //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)
@@ -78,8 +82,11 @@ class Grid extends StatelessWidget {
             //Friend Page
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => FriendPage()));
+                Navigator.push(
+                    context,
+                    //new MaterialPageRoute(builder: (context) => FriendPage())
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ____) => FriendPage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
@@ -94,8 +101,10 @@ class Grid extends StatelessWidget {
             //Study Page
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => StudyPage()));
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ____) => FriendPage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
@@ -110,8 +119,10 @@ class Grid extends StatelessWidget {
             //Games Page
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => GamePage()));
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ____) => FriendPage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
@@ -126,8 +137,10 @@ class Grid extends StatelessWidget {
             //Chill Page
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => ChillPage()));
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ____) => FriendPage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
@@ -142,8 +155,10 @@ class Grid extends StatelessWidget {
             //Workout Page
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => WorkoutPage()));
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ____) => FriendPage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
@@ -161,8 +176,10 @@ class Grid extends StatelessWidget {
             //Music Page
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => MusicPage()));
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder: (_, __, ____) => FriendPage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(
@@ -185,40 +202,43 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
         alignment: Alignment.bottomCenter,
-        child: ButtonBar(
-          alignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            //home
-            IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                          pageBuilder: (context, Animation animation,
-                                  Animation animation2) =>
-                              HomePage(),
-                          transitionDuration: Duration(seconds: 0)));
-                }),
-            //messages
-            IconButton(
-                icon: Icon(Icons.message),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      new MaterialPageRoute(
-                          builder: (context) => SettingPage()));
-                }),
-            //map
-            IconButton(
-                icon: Icon(Icons.map),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      new MaterialPageRoute(
-                          builder: (context) => SettingPage()));
-                }),
-          ],
+        child: Container(
+          color: Colors.white70,
+          child: ButtonBar(
+            alignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              //home
+              IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                            pageBuilder: (context, Animation animation,
+                                    Animation animation2) =>
+                                HomePage(),
+                            transitionDuration: Duration(seconds: 0)));
+                  }),
+              //messages
+              IconButton(
+                  icon: Icon(Icons.message),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => SettingPage()));
+                  }),
+              //map
+              IconButton(
+                  icon: Icon(Icons.map),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => SettingPage()));
+                  }),
+            ],
+          ),
         ));
   }
 }
