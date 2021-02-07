@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ******************* CONSTANTS *******************
 
 final lightBlue = Color.fromRGBO(186, 235, 255, 1);
-final darkBlue = Color.fromRGBO(57, 84, 159, 1);
+final darkBlue = Color.fromRGBO(101, 179, 195, 1);
 
 // ******************* THEME DATA *******************
 
@@ -12,6 +12,11 @@ final baseTheme = ThemeData(
   textTheme: TextTheme(
     headline1: TextStyle(
       fontSize: 36.0,
+      fontFamily: 'Pacifico',
+      color: darkBlue,
+    ),
+    headline2: TextStyle(
+      fontSize: 24.0,
       fontFamily: 'Pacifico',
       color: darkBlue,
     ),
