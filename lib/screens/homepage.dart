@@ -6,6 +6,7 @@ import 'package:campus_cloud/screens/study_page.dart';
 import 'package:campus_cloud/screens/workout_page.dart';
 import 'package:campus_cloud/screens/setting_page.dart';
 import 'package:campus_cloud/screens/friend_page.dart';
+import 'package:campus_cloud/screens/globe_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -57,7 +58,8 @@ class Header extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage('asset/images/logo.jpg')
+                                  image: AssetImage(
+                                      './assets/images/profile_pic.png')
                                   //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)
@@ -86,7 +88,7 @@ class Grid extends StatelessWidget {
                     context,
                     //new MaterialPageRoute(builder: (context) => FriendPage())
                     PageRouteBuilder(
-                        pageBuilder: (_, __, ____) => FriendPage()));
+                        pageBuilder: (_, __, ____) => GlobePage()));
               },
               child: Card(
                   shape: RoundedRectangleBorder(

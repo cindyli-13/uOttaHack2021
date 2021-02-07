@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:campus_cloud/common/backdrop.dart';
 
 // ******************* CONSTANTS *******************
 
@@ -9,33 +8,39 @@ final buttonHeight = 50.0;
 final dropdownWidth = 300.0;
 final dropdownHeight = 40.0;
 
-// ******************* SIGN UP GENERAL *******************
+final textFieldWidth = 300.0;
+final textFieldHeight = 40.0;
 
-class SignUpGeneral extends StatefulWidget {
+final textFormBackgroundColor = Colors.white;
+
+// ******************* SIGN UP INFO *******************
+
+class ExtraFiltersPage extends StatefulWidget {
   @override
-  _SignUpGeneralState createState() => _SignUpGeneralState();
+  _ExtraFiltersPageState createState() => _ExtraFiltersPageState();
 }
 
-class _SignUpGeneralState extends State<SignUpGeneral> {
+class _ExtraFiltersPageState extends State<ExtraFiltersPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Container(
         color: Theme.of(context).primaryColor,
         child: Column(children: [
-          Backdrop(),
-          UniversitySelect(),
+          Headline(),
+          ProgramSelect(),
           GradYearSelect(),
-          LanguageSelect(),
+          CallCapacitySelect(),
+          OtherKeywordsTextField(),
           Container(
             margin: EdgeInsets.only(
-              top: 60,
+              top: 70,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 BackButton(),
-                NextButton(),
+                LetsGoButton(),
               ],
             ),
           ),
@@ -45,14 +50,31 @@ class _SignUpGeneralState extends State<SignUpGeneral> {
   }
 }
 
-// ******************* UNIVERSITY SELECT *******************
+// ******************* HEADLINE *******************
 
-class UniversitySelect extends StatefulWidget {
+class Headline extends StatelessWidget {
   @override
-  _UniversitySelectState createState() => _UniversitySelectState();
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        top: 100,
+        bottom: 50,
+      ),
+      child: Text('Almost There!',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headline3),
+    );
+  }
 }
 
-class _UniversitySelectState extends State<UniversitySelect> {
+// ******************* UNIVERSITY SELECT *******************
+
+class ProgramSelect extends StatefulWidget {
+  @override
+  _ProgramSelectState createState() => _ProgramSelectState();
+}
+
+class _ProgramSelectState extends State<ProgramSelect> {
   String dropdownValue;
 
   @override
@@ -75,13 +97,15 @@ class _UniversitySelectState extends State<UniversitySelect> {
           });
         },
         hint: Text(
-          'University',
+          'Program',
           style: TextStyle(color: Colors.grey),
         ),
         items: <String>[
-          'University of Waterloo',
-          'Carleton University',
-          'Other'
+          'Any',
+          'Accounting & Finance',
+          'Computer Science',
+          'Engineering',
+          'Psychology',
         ].map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
@@ -145,14 +169,14 @@ class _GradYearSelectState extends State<GradYearSelect> {
   }
 }
 
-// ******************* LANGUAGE SELECT *******************
+// ******************* GRAD YEAR SELECT *******************
 
-class LanguageSelect extends StatefulWidget {
+class CallCapacitySelect extends StatefulWidget {
   @override
-  _LanguageSelectState createState() => _LanguageSelectState();
+  _CallCapacitySelectState createState() => _CallCapacitySelectState();
 }
 
-class _LanguageSelectState extends State<LanguageSelect> {
+class _CallCapacitySelectState extends State<CallCapacitySelect> {
   String dropdownValue;
 
   @override
@@ -175,19 +199,45 @@ class _LanguageSelectState extends State<LanguageSelect> {
           });
         },
         hint: Text(
-          'Language',
+          'Call Capacity',
           style: TextStyle(color: Colors.grey),
         ),
         items: <String>[
-          'English',
-          'French',
-          'Other',
+          '2',
+          '3',
+          '4',
+          '5',
         ].map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
           );
         }).toList(),
+      ),
+    );
+  }
+}
+
+// ******************* OTHER KEYWORDS TEXT BOX *******************
+
+class OtherKeywordsTextField extends StatefulWidget {
+  @override
+  _OtherKeywordsTextFieldState createState() => _OtherKeywordsTextFieldState();
+}
+
+class _OtherKeywordsTextFieldState extends State<OtherKeywordsTextField> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: textFieldWidth,
+      height: textFieldHeight,
+      margin: EdgeInsets.only(
+        top: 20,
+      ),
+      child: TextFormField(
+        decoration: InputDecoration(
+          hintText: 'Other Keywords',
+        ),
       ),
     );
   }
@@ -226,14 +276,14 @@ class _BackButtonState extends State<BackButton> {
   }
 }
 
-// ******************* NEXT BUTTON *******************
+// ******************* LET'S GO BUTTON *******************
 
-class NextButton extends StatefulWidget {
+class LetsGoButton extends StatefulWidget {
   @override
-  _NextButtonState createState() => _NextButtonState();
+  _LetsGoButtonState createState() => _LetsGoButtonState();
 }
 
-class _NextButtonState extends State<NextButton> {
+class _LetsGoButtonState extends State<LetsGoButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -246,7 +296,7 @@ class _NextButtonState extends State<NextButton> {
       child: RaisedButton(
         onPressed: buttonPressedHandler,
         child: Text(
-          'Next',
+          "Let's Go",
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.button,
         ),
@@ -255,6 +305,6 @@ class _NextButtonState extends State<NextButton> {
   }
 
   void buttonPressedHandler() {
-    Navigator.pushNamed(context, '/sign-up-info');
+    Navigator.pushNamed(context, '/friend-page');
   }
 }
