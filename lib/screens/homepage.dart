@@ -53,7 +53,7 @@ class Header extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage('asset/images/chill.jpg')
+                                  image: AssetImage('asset/images/jayce.jpg')
                                   //INSERT PROFILE PICTURE HERE
                                   // image: NetworkImage(
                                   //   snapshot.data.photoUrl)
@@ -83,10 +83,13 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
+                      borderRadius: BorderRadius.circular(10.0)),
                   elevation: 4,
-                  child: Image.asset('assets/images/friends.jpg',
-                      fit: BoxFit.cover)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset('assets/images/friends.jpg',
+                        fit: BoxFit.cover),
+                  )),
             ),
             //Study Page
             GestureDetector(
@@ -96,10 +99,13 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                      borderRadius: BorderRadius.circular(10)),
                   elevation: 4,
-                  child: Image.asset('assets/images/study.jpg',
-                      fit: BoxFit.cover)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset('assets/images/study.jpg',
+                        fit: BoxFit.cover),
+                  )),
             ),
             //Games Page
             GestureDetector(
@@ -109,10 +115,13 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                      borderRadius: BorderRadius.circular(10)),
                   elevation: 4,
-                  child: Image.asset('assets/images/games.jpg',
-                      fit: BoxFit.cover)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset('assets/images/games.jpg',
+                        fit: BoxFit.cover),
+                  )),
             ),
             //Chill Page
             GestureDetector(
@@ -122,10 +131,13 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                      borderRadius: BorderRadius.circular(10)),
                   elevation: 4,
-                  child: Image.asset('assets/images/chill.jpg',
-                      fit: BoxFit.cover)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset('assets/images/chill.jpg',
+                        fit: BoxFit.cover),
+                  )),
             ),
             //Workout Page
             GestureDetector(
@@ -135,10 +147,16 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                      borderRadius: BorderRadius.circular(10)),
                   elevation: 4,
-                  child: Image.asset('assets/images/workout.jpg',
-                      fit: BoxFit.cover)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset('assets/images/workout.jpg',
+                          fit: BoxFit.cover),
+                    ),
+                  )),
             ),
             //Music Page
             GestureDetector(
@@ -148,10 +166,13 @@ class Grid extends StatelessWidget {
               },
               child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
+                      borderRadius: BorderRadius.circular(10)),
                   elevation: 4,
-                  child: Image.asset('assets/images/music.jpg',
-                      fit: BoxFit.cover)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset('assets/images/music.jpg',
+                        fit: BoxFit.cover),
+                  )),
             ),
           ],
           crossAxisCount: 2),
@@ -170,12 +191,9 @@ class BottomBar extends StatelessWidget {
             //home
             IconButton(
                 icon: Icon(Icons.home),
-
-                //onPressed: null,
                 onPressed: () {
                   Navigator.push(
                       context,
-                      //new MaterialPageRoute(builder: (context) => HomePage())
                       PageRouteBuilder(
                           pageBuilder: (context, Animation animation,
                                   Animation animation2) =>
