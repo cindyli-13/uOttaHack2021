@@ -14,7 +14,7 @@ class AppPage extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       child: Column(children: [
         Title(),
-        Image(),
+        FrontPageImage(),
         LoginButton(),
         SignUpButton(),
       ]),
@@ -39,16 +39,17 @@ class Title extends StatelessWidget {
 
 // ******************* IMAGE *******************
 
-class Image extends StatelessWidget {
+class FrontPageImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        top: 150,
-        bottom: 150,
+      width: 229,
+      height: 279,
+      margin: EdgeInsets.only(
+        top: 30,
+        bottom: 50,
       ),
-      child: Text('Insert image here',
-          style: Theme.of(context).textTheme.bodyText1),
+      child: Image.asset('./assets/image-missing.png'),
     );
   }
 }
@@ -100,7 +101,7 @@ class _SignUpButtonState extends State<SignUpButton> {
       width: buttonWidth,
       height: buttonHeight,
       margin: EdgeInsets.only(
-        top: 5,
+        top: 10,
       ),
       padding: EdgeInsets.only(
         top: 3,
@@ -118,6 +119,6 @@ class _SignUpButtonState extends State<SignUpButton> {
   }
 
   void buttonPressedHandler() {
-    return;
+    Navigator.pushNamed(context, '/sign-up-general');
   }
 }
