@@ -87,7 +87,7 @@ class Grid extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0)),
                   elevation: 4,
                   child: Image.asset('assets/images/friends.jpg',
-                      fit: BoxFit.cover)),
+                  fit: BoxFit.cover)),
             ),
             //Study Page
             GestureDetector(
@@ -96,9 +96,11 @@ class Grid extends StatelessWidget {
                     new MaterialPageRoute(builder: (context) => StudyPage()));
               },
               child: Card(
+              shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
                   child: Image.asset('assets/images/study.jpg',
-                      fit: BoxFit.cover)),
+                  fit: BoxFit.cover)),
             ),
             //Games Page
             GestureDetector(
@@ -110,7 +112,11 @@ class Grid extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
+
                   child: Image.asset('assets/images/games.jpg',
+=======
+                  
+
                       fit: BoxFit.cover)),
             ),
             //Chill Page
@@ -124,7 +130,7 @@ class Grid extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
                   child: Image.asset('assets/images/chill.jpg',
-                      fit: BoxFit.cover)),
+                  fit: BoxFit.cover)),
             ),
             //Workout Page
             GestureDetector(
@@ -137,7 +143,7 @@ class Grid extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
                   child: Image.asset('assets/images/workout.jpg',
-                      fit: BoxFit.cover)),
+                  fit: BoxFit.cover)),
             ),
             //Music Page
             GestureDetector(
@@ -150,7 +156,7 @@ class Grid extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
                   child: Image.asset('assets/images/music.jpg',
-                      fit: BoxFit.cover)),
+                  fit: BoxFit.cover)),
             ),
           ],
           crossAxisCount: 2),

@@ -7,6 +7,7 @@ import 'package:campus_cloud/screens/study_page.dart';
 import 'package:campus_cloud/screens/workout_page.dart';
 import 'package:campus_cloud/themes/base_theme.dart';
 import 'package:campus_cloud/screens/app_page.dart';
+import 'package:campus_cloud/screens/sign_in.dart';
 import 'package:campus_cloud/screens/sign_up_general.dart';
 import 'package:campus_cloud/screens/sign_up_info.dart';
 
@@ -23,7 +24,8 @@ class AppStart extends StatelessWidget {
       theme: baseTheme,
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => HomePage(),
+        '/': (context) => AppPage(),
+        '/sign-in': (context) => Signin(),
         '/sign-up-general': (context) => SignUpGeneral(),
         '/sign-up-info': (context) => SignUpInfo(),
         '/home': (context) => HomePage(),

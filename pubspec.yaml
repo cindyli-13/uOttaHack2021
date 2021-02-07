@@ -47,13 +47,7 @@ flutter:
 
 
   assets:
-    - assets/images/logo.jpg
-    - assets/images/friends.jpg
-    - assets/images/music.jpg
-    - assets/images/workout.jpg
-    - assets/images/chill.jpg
-    - assets/images/study.jpg
-    - assets/images/games.jpg
+    - assets/images/
 
 
   # To add assets to your application, add an assets section, like this:
