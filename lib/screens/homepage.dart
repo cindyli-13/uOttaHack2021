@@ -15,7 +15,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    // int _currentIndex = 0;
+
+    // final tabs = [
+    //   HomePage(),
+    //   SettingPage(),
+    //   StudyPage()
+    // ];
 
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
@@ -23,38 +29,47 @@ class _HomePageState extends State<HomePage> {
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Column(children: <Widget>[Header(), Grid()]),
+            child: Column(children: <Widget>[Header(), Grid(), BottomBar()]),
           ),
         )
       ]),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-            //backgroundColor: Colors.black
-          ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: _currentIndex,
+      //   type: BottomNavigationBarType.fixed,
+      //   iconSize: 30,
+      //   selectedFontSize: 15,
+      //   unselectedFontSize: 15,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: "Home",
+      //       //backgroundColor: Colors.blue
+      //     ),
 
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: "Message",
-            //backgroundColor: Colors.blue
-          ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.message),
+      //       label: "Message",
+      //       //backgroundColor: Colors.blue
+      //     ),
 
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: "Map",
-            //backgroundColor: Colors.blue
-          ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.map),
+      //       label: "Map",
+      //       //backgroundColor: Colors.blue
+      //     ),
 
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.settings),
-          //   label: "Settings",
-          //   //backgroundColor: Colors.blue
-          // ),
-
-        ]
-      ),
+      //     // BottomNavigationBarItem(
+      //     //   icon: Icon(Icons.settings),
+      //     //   label: "Settings",
+      //     //   //backgroundColor: Colors.blue
+      //     // ),
+      //   ],
+      //   onTap: (index) {
+      //     setState(() {
+      //       _currentIndex = index;
+      //     });
+      //   },
+      // ),
     );
   }
 }
@@ -95,30 +110,6 @@ class Header extends StatelessWidget {
         ]
       ),
     );
-
-    // return Container(
-    //   height: 64,
-    //   child: Row(
-    //     children: [
-    //       ButtonTheme(
-    //         minWidth: 50.0,
-    //         height: 100.0,
-    //         child: OutlineButton(
-    //             shape: new CircleBorder(),
-    //             borderSide: BorderSide(color: Colors.black, width: 2.0),
-    //             color: Colors.grey,
-    //             //highlightedBorderColor: Colors.grey,
-    //             //padding: ,
-    //             onPressed: () {
-    //               Navigator.push(
-    //                   context,
-    //                   new MaterialPageRoute(
-    //                       builder: (context) => SettingPage()));
-    //             }),
-    //       ),
-    //     ],
-    //   ),
-    // );
   }
 }
 
@@ -233,3 +224,43 @@ class Grid extends StatelessWidget {
   }
 }
 
+class BottomBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child:ButtonBar (
+        alignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          //home
+          IconButton(
+            icon: Icon(Icons.home),
+            iconSize: 30,
+            onPressed: null,
+            // onPressed:() {
+            //   Navigator.push(context,
+            //         new MaterialPageRoute(builder: (context) => HomePage()));
+            // }
+          ),
+          //messages
+          IconButton(
+            icon: Icon(Icons.message),
+            onPressed:() {
+              Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => SettingPage()));
+            }
+          ),
+          //map
+          IconButton(
+            icon: Icon(Icons.map),
+            onPressed:() {
+              Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => SettingPage()));
+            }
+          ),
+        ],
+      )
+    );
+  }
+  
+}
