@@ -175,7 +175,7 @@ class _UsernameTextFieldState extends State<UsernameTextField> {
       ),
       child: TextFormField(
         decoration: InputDecoration(
-          hintText: "Username",
+          hintText: 'Username',
           filled: true,
           fillColor: textFormBackgroundColor,
           contentPadding: EdgeInsets.only(left: 14.0, bottom: 8.0, top: 8.0),
@@ -292,6 +292,6 @@ class _SignUpButtonState extends State<SignUpButton> {
   }
 
   void buttonPressedHandler() {
-    return;
+    Navigator.pushNamed(context, '/home');
   }
 }

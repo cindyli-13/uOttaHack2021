@@ -43,8 +43,8 @@ class FrontPageImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 229,
-      height: 279,
+      width: 250,
+      height: 300,
       margin: EdgeInsets.only(
         top: 30,
         bottom: 50,

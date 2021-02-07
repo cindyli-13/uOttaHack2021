@@ -66,7 +66,12 @@ class Line extends StatelessWidget {
       width: 425.97,
       height: 161.23,
       margin: EdgeInsets.only(top: 111.42),
-      child: Image.asset('assets/images/image-missing.png'),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/line.png'),
+          fit: BoxFit.fill,
+        ),
+      ),
     );
   }
 }

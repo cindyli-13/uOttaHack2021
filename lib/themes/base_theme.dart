@@ -20,12 +20,21 @@ final baseTheme = ThemeData(
       fontFamily: 'Pacifico',
       color: darkBlue,
     ),
+    headline3: TextStyle(
+      fontSize: 30.0,
+      fontFamily: 'DidactGothic',
+      color: darkBlue,
+    ),
     button: TextStyle(
-      fontSize: 20.0,
+      fontSize: 24.0,
       fontFamily: 'Arial',
       color: Colors.white,
     ),
-    bodyText1: TextStyle(fontSize: 14.0, fontFamily: 'Arial'),
+    bodyText1: TextStyle(
+      fontSize: 20.0,
+      fontFamily: 'DidactGothic',
+      color: darkBlue,
+    ),
   ),
   buttonTheme: ButtonThemeData(
     buttonColor: darkBlue,
