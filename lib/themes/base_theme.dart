@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // ******************* CONSTANTS *******************
 
-final lightBlue = Color.fromRGBO(186, 235, 255, 1);
+final lightBlue = Color.fromRGBO(184, 226, 236, 1);
 final darkBlue = Color.fromRGBO(101, 179, 195, 1);
 
 // ******************* THEME DATA *******************

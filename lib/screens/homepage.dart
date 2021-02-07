@@ -33,7 +33,6 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //need to change to FutureBuilder when auth works F
-    double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       child: Row(
@@ -96,6 +95,8 @@ class Grid extends StatelessWidget {
                     new MaterialPageRoute(builder: (context) => StudyPage()));
               },
               child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
                   elevation: 4,
                   child: Image.asset('assets/images/study.jpg',
                       fit: BoxFit.cover)),
@@ -172,13 +173,14 @@ class BottomBar extends StatelessWidget {
 
                 //onPressed: null,
                 onPressed: () {
-                  Navigator.push(context,
+                  Navigator.push(
+                      context,
                       //new MaterialPageRoute(builder: (context) => HomePage())
                       PageRouteBuilder(
-                        pageBuilder: (context,Animation animation, Animation animation2) => HomePage(),
-                        transitionDuration: Duration(seconds: 0)
-                      )
-                      );
+                          pageBuilder: (context, Animation animation,
+                                  Animation animation2) =>
+                              HomePage(),
+                          transitionDuration: Duration(seconds: 0)));
                 }),
             //messages
             IconButton(

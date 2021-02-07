@@ -222,7 +222,7 @@ class _BackButtonState extends State<BackButton> {
   }
 
   void buttonPressedHandler() {
-    Navigator.pushNamed(context, '/');
+    Navigator.pop(context);
   }
 }
 
