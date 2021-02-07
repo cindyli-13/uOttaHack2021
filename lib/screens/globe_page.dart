@@ -95,16 +95,16 @@ class _GlobeState extends State<Globe> {
       child: FutureBuilder<int>(
         future: _f,
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-          if (snapshot.hasData) {
-            return Object3D(
-              size: const Size(30.0, 30.0),
-              path: _globeHologramPath,
-              asset: true,
-              zoom: 5.0,
-            );
-          } else {
-            return Image.asset('assets/images/globe.png');
-          }
+          // if (snapshot.hasData) {
+          //   return Object3D(
+          //     size: const Size(30.0, 30.0),
+          //     path: _globeHologramPath,
+          //     asset: true,
+          //     zoom: 5.0,
+          //   );
+          // } else {
+          return Image.asset('assets/images/globe.png');
+          // }
         },
       ),
     );

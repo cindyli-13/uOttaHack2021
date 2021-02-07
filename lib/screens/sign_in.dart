@@ -62,6 +62,7 @@ class SigninState extends State<Signin> {
                           ),
                         ),
                         child: TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "Password",
