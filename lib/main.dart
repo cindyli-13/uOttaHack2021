@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:campus_cloud/themes/base_theme.dart';
 import 'package:campus_cloud/screens/app_page.dart';
+import 'package:campus_cloud/screens/sign_up_general.dart';
+import 'package:campus_cloud/screens/sign_up_info.dart';
 
 // ******************* MAIN *******************
 void main() => runApp(AppStart());
@@ -16,6 +18,8 @@ class AppStart extends StatelessWidget {
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context) => AppPage(),
+        '/sign-up-general': (context) => SignUpGeneral(),
+        '/sign-up-info': (context) => SignUpInfo(),
       },
     );
   }
