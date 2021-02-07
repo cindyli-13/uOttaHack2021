@@ -4,6 +4,8 @@ Submission to uOttaHack 4
 
 ![Alt Text](https://github.com/cindyli-13/uOttaHack2021/blob/main/poster.gif)
 
+![Alt Text](https://github.com/cindyli-13/uOttaHack2021/blob/main/login.gif)
+
 ## Inspiration
 The inspiration of this application stemmed from a discord video call, where the phrase “turn on your cameras, this is the only way we can see each other” changed from just a sentence into an idea.  
 
@@ -41,3 +43,5 @@ CampusCloud was built using Flutter and Dart.
 	- Allowing users to share socials with a click of button
 	- Creating a globe feature which allows students to see which countries they have virtually visited
 	- Provide a history list of people they have spoken to
+
+Video: https://www.canva.com/design/DAEVdLqfq_c/1Sk5WYKusWKfgyOMTIGAkw/watch?utm_content=DAEVdLqfq_c&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
